@@ -29,3 +29,87 @@ Processed structured data (JSON with extracted medical terms)
 Encoded image data
 Document type (prescription, lab report, etc.)
 This allows users to upload, view, and store medical documents securely.
+
+Features
+Document Upload & Management
+Upload and manage different types of documents with search and categorization.
+
+OCR Processing
+Extract text from images and scanned PDFs using Tesseract OCR (tessdata/eng.traineddata).
+
+Text Processing
+Includes keyword extraction, medical term recognition (medical_terms.json), and content analysis.
+
+User Interface
+HTML templates for viewing documents, profiles, and search results (templates/ folder).
+
+Frontend Enhancements
+JavaScript and CSS for camera-based uploads and improved UI (static/ folder).
+Project Structure
+graphql
+Copy
+Edit
+TeacherMediaHub/
+├── app.py                 # Flask app initialization and routes
+├── main.py                # Entry point for running the application
+├── document_manager.py    # Handles document storage, retrieval, and metadata
+├── ocr_processor.py       # OCR extraction logic using Tesseract
+├── text_processor.py      # Text cleaning, keyword extraction, etc.
+├── models.py              # Database models (SQLAlchemy or similar)
+├── medical_terms.json     # Predefined terms for recognition
+├── static/                # CSS and JavaScript assets
+├── templates/             # HTML templates for the UI
+├── tessdata/              # Tesseract language data
+├── pyproject.toml         # Project dependencies and metadata
+├── uv.lock                # Dependency lock file
+└── generated-icon.png     # App icon/logo
+Requirements
+Python 3.8+
+
+Flask
+
+SQLAlchemy
+
+Tesseract OCR
+
+Pillow
+
+Other dependencies listed in pyproject.toml
+
+Installation
+Clone the repository
+
+bash
+Copy
+Edit
+git clone <repo-url>
+cd TeacherMediaHub
+Install dependencies
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+(Or use pip install . if using Poetry/pyproject.toml)
+
+Install Tesseract OCR
+
+Linux (Debian/Ubuntu): sudo apt install tesseract-ocr
+
+Windows: Download from Tesseract GitHub
+
+Run the app
+
+bash
+Copy
+Edit
+python main.py
+Usage
+Access the app via: http://127.0.0.1:5000
+
+Upload documents/images.
+
+Process with OCR.
+
+View and search extracted content.
+
